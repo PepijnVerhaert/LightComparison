@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using UnityEngine;
 
 public class GradientAlgorithm : LightAlgorithm
@@ -20,10 +21,15 @@ public class GradientAlgorithm : LightAlgorithm
         float mapSize = _map.mapSize;
         for (int i = 0; i < _map.mapSize; ++i)
         {
-            color.r = i / mapSize;
             for (int j = 0; j < _map.mapSize; ++j)
             {
-                if (rangeLimit != -1 && (i < x - rangeLimit || i > x + rangeLimit || j < y - rangeLimit || j > y + rangeLimit))
+                if (_map.map[i][j])
+                {
+                    _colorMap[i][j] = Color.green * .8f;
+                    continue;
+                }
+
+                if (rangeLimit != -1 && Mathf.Abs(x - i) + Mathf.Abs(y - j) > rangeLimit)
                 {
                     _colorMap[i][j] = Color.black;
                     continue;
@@ -31,11 +37,20 @@ public class GradientAlgorithm : LightAlgorithm
 
                 if(i == x && j == y)
                 {
-                    _colorMap[i][j] = Color.yellow;
+                    _colorMap[i][j] = Color.white;
                     continue;
                 }
-                
+
+                color.r = i / mapSize;
                 color.g = j / mapSize;
+                color.b = 1f;
+
+                if(rangeLimit != -1)
+                {
+                    float distance = Mathf.Abs(x - i) + Mathf.Abs(y - j);
+                    color *= 1f - distance / rangeLimit;
+                }
+
                 _colorMap[i][j] = color;
             }
         }

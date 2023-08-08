@@ -15,7 +15,7 @@ public class PixelChanger : MonoBehaviour
     public MapScriptableObject _map;
     public List<List<Color>> _colorMap = new List<List<Color>>();
 
-    private int _lightRange = 20;
+    private int _lightRange = 30;
 
     public void SetLightPos(int lightX, int lightY)
     {
@@ -40,6 +40,7 @@ public class PixelChanger : MonoBehaviour
             _colorMap.Add(row);
         }
 
+        _map.Init();
         _lightAlgorithm.SetMaps(_map, ref _colorMap);
         
         //pos

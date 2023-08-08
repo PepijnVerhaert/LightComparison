@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -10,19 +11,26 @@ public class MapScriptableObject : ScriptableObject
 
     public int mapSize = 64;
 
-    void Reset()
+    public void Init()
     {
-        Debug.Log("Reset map");
+        Debug.Log("Init map");
 
         map.Clear();
 
-        var row = new List<bool>();
-        for (int i = 0; i < mapSize; i++) 
-        {
-            row.Add(false);
-        }
         for (int i = 0; i < mapSize; i++)
         {
+            var row = new List<bool>();
+            for (int j = 0; j < mapSize; j++)
+            {
+                if (Random.Range(0, 10) == 0)
+                {
+                    row.Add(true);
+                }
+                else
+                {
+                    row.Add(false);
+                }
+            }
             map.Add(row);
         }
     }

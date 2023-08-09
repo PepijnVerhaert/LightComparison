@@ -15,7 +15,7 @@ public class PixelChanger : MonoBehaviour
     public MapScriptableObject _map;
     public List<List<Color>> _colorMap = new List<List<Color>>();
 
-    private int _lightRange = 30;
+    private int _lightRange = -1;
 
     public void SetLightPos(int lightX, int lightY)
     {

@@ -72,9 +72,9 @@ public class Grid8Algorithm : LightAlgorithm
                     continue;
                 }
 
-                //color = Color.white * .7f * _grid[i][j];
+                color = Color.white * .7f * _grid[i][j];
 
-                color = _grid[i][j] >= .5f ? Color.white * .7f : Color.black;
+                //color = _grid[i][j] >= .15f ? Color.white * .7f : Color.black;
 
                 if (rangeLimit != -1)
                 {

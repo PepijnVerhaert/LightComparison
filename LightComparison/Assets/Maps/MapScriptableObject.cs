@@ -22,7 +22,7 @@ public class MapScriptableObject : ScriptableObject
             var row = new List<bool>();
             for (int j = 0; j < mapSize; j++)
             {
-                if (Random.Range(0, 10) == 0)
+                if (Random.Range(0, 5) == 0)
                 {
                     row.Add(true);
                 }

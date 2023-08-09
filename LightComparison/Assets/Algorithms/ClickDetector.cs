@@ -34,8 +34,8 @@ public class ClickDetector : MonoBehaviour
 
         var posX = _texture.width / 2;
         var posY = _texture.height / 2;
-        posX += Mathf.RoundToInt(offsetFromCenter.x);
-        posY += Mathf.RoundToInt(offsetFromCenter.y);
+        posX += Mathf.RoundToInt(offsetFromCenter.x-.5f);
+        posY += Mathf.RoundToInt(offsetFromCenter.y-.5f);
 
         foreach (var pixelChanger in _pixelChangers)
         {

@@ -67,17 +67,17 @@ public class ClickDetector : MonoBehaviour
             posY += Mathf.RoundToInt(offsetFromCenter.y - .5f);
 
 
-            if (_wasRightDown)
-            {
-
-            }
-            else
+            if (!_wasRightDown)
             {
                 _wasRightDown = true;
                 _wasPlacingWall = !_map.map[posX][posY];
             }
 
             _map.map[posX][posY] = _wasPlacingWall;
+            foreach (var pixelChanger in _pixelChangers)
+            {
+                pixelChanger.ResetFPS();
+            }
         }
         else
         {

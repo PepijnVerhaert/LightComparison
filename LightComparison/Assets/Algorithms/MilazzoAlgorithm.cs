@@ -30,7 +30,7 @@ public class MilazzoAlgorithm : LightAlgorithm
         }
     }
 
-    public void ResetFPS()
+    public override void ResetFPS()
     {
         _calculations = 0;
         _totalCalculationTime = 0f;

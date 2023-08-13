@@ -39,10 +39,17 @@ public class PixelChanger : MonoBehaviour
         }
     }
 
+    public void ResetFPS()
+    {
+        _lightAlgorithm.ResetFPS();
+    }
+
     public void SetLightPos(int lightX, int lightY)
     {
         _lightX = lightX;
         _lightY = lightY;
+
+        _lightAlgorithm.ResetFPS();
     }
 
     public ref MapScriptableObject GetMap()

@@ -44,7 +44,7 @@ public class Grid8Algorithm : LightAlgorithm
             _hardShadow = 0.001f;
         }
     }
-    public void ResetFPS()
+    public override void ResetFPS()
     {
         _calculations = 0;
         _totalCalculationTime = 0f;

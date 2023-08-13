@@ -14,6 +14,9 @@ public class GradientAlgorithm : LightAlgorithm
         _colorMap = colorMap;
     }
 
+    public override void ResetFPS() 
+    { }
+
 
     public override void CalculateLight(int x, int y, int rangeLimit)
     {

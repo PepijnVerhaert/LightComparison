@@ -11,6 +11,9 @@ public class MilazzoAlgorithm : LightAlgorithm
 
     private List<List<bool>> _grid;
 
+    int _calculations = 0;
+    float _totalCalculationTime = 0f;
+
     public override void SetMaps(MapScriptableObject map, ref List<List<Color>> colorMap)
     {
         _map = map;
@@ -27,8 +30,21 @@ public class MilazzoAlgorithm : LightAlgorithm
         }
     }
 
+    public void ResetFPS()
+    {
+        _calculations = 0;
+        _totalCalculationTime = 0f;
+    }
+
+    public float GetFPS()
+    {
+        float fps = _totalCalculationTime / _calculations;
+        return 1f/fps;
+    }
+
     public override void CalculateLight(int x, int y, int rangeLimit)
     {
+
         for (int i = 0; i < _grid.Count; i++)
         {
             for (int j = 0; j < _grid[i].Count; j++)
@@ -36,6 +52,8 @@ public class MilazzoAlgorithm : LightAlgorithm
                 _grid[i][j] = false;
             }
         }
+        //start counting
+        var startTime = Time.realtimeSinceStartup;
 
         _grid[x][y] = true;
 
@@ -46,6 +64,10 @@ public class MilazzoAlgorithm : LightAlgorithm
                 Compute(octant, x, y, rangeLimit, 1, new Slope(1, 1), new Slope(0, 1));
             }
         }
+
+        //stop counting
+        _totalCalculationTime += Time.realtimeSinceStartup - startTime;
+        ++_calculations;
 
         Color color = Color.black;
 
@@ -72,9 +94,12 @@ public class MilazzoAlgorithm : LightAlgorithm
                 if (rangeLimit != -1)
                 {
                     float distance = Mathf.Abs(x - i) + Mathf.Abs(y - j);
-                    color *= 1f - distance / rangeLimit;
+                    if (distance > rangeLimit)
+                    {
+                        color = Color.black;
+                    }
+                    //color *= 1f - distance / rangeLimit;
                 }
-
                 _colorMap[i][j] = color;
             }
         }

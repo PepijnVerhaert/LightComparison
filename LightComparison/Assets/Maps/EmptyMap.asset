@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c00c809c8c3e0e4b87fc79a5171f1d6, type: 3}
   m_Name: EmptyMap
   m_EditorClassIdentifier: 
+  map1d: 
   mapSize: 64

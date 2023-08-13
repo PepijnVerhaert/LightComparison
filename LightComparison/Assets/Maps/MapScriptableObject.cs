@@ -9,6 +9,8 @@ public class MapScriptableObject : ScriptableObject
 {
     public List<List<bool>> map = new List<List<bool>>();
 
+    public List<bool> map1d = new List<bool>();
+
     public int mapSize = 64;
 
     public void Init()
@@ -22,7 +24,7 @@ public class MapScriptableObject : ScriptableObject
             var row = new List<bool>();
             for (int j = 0; j < mapSize; j++)
             {
-                if (Random.Range(0, 5) == 0)
+                if (Random.Range(0, 4) == 0)
                 {
                     row.Add(true);
                 }
@@ -30,6 +32,36 @@ public class MapScriptableObject : ScriptableObject
                 {
                     row.Add(false);
                 }
+            }
+            map.Add(row);
+        }
+
+        To1D();
+    }
+
+    public void To1D()
+    {
+        map1d.Clear();
+
+        for (int i = 0; i < mapSize; i++)
+        {
+            for (int j = 0; j < mapSize; j++)
+            {
+                map1d.Add(map[i][j]);
+            }
+        }
+    }
+
+    public void To2D()
+    {
+        map.Clear();
+
+        for (int i = 0; i < mapSize; i++)
+        {
+            var row = new List<bool>();
+            for (int j = 0; j < mapSize; j++)
+            {
+                row.Add(map1d[i*64 + j]);
             }
             map.Add(row);
         }

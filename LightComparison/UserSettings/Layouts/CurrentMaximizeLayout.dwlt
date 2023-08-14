@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 46761
+  controlID: 49965
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -89,8 +89,8 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
-    m_HSlider: 0
-    m_VSlider: 0
+    m_HSlider: 1
+    m_VSlider: 1
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
       y: 21
       width: 889.2
       height: 386
-    m_Scale: {x: 0.44675925, y: 0.44675925}
+    m_Scale: {x: 1, y: 1}
     m_Translation: {x: 444.6, y: 193}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -111,10 +111,10 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -995.1669
-      y: -432
-      width: 1990.3337
-      height: 864
+      x: -444.6
+      y: -193
+      width: 889.2
+      height: 386
     m_MinimalGUI: 1
   m_defaultScale: 0.44675925
   m_LastWindowPixelSize: {x: 1111.5, y: 508.75}
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 46714
+  controlID: 49918
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 46690
+  controlID: 49882
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -281,8 +281,8 @@ MonoBehaviour:
     y: 0
     width: 891.2
     height: 428
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 8}
@@ -809,7 +809,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Algorithms
+    - Assets/Performance
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -817,15 +817,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Algorithms
+  - Assets/Performance
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\GRADWORK\GitRepo\LightComparison\LightComparison
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 30610000
-    m_LastClickedID: 24880
+    m_SelectedIDs: 348e0000
+    m_LastClickedID: 36404
     m_ExpandedIDs: 000000002a61000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -879,8 +879,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: b4600000d0600000c2600000e2600000
-    m_LastClickedInstanceID: 24756
+    m_SelectedInstanceIDs: aa600000
+    m_LastClickedInstanceID: 24746
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000000000000066000008660000
     m_RenameOverlay:
@@ -1010,7 +1010,7 @@ MonoBehaviour:
     m_CachedPref: -240
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -1
+  m_LastInspectedObjectInstanceID: 24746
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0

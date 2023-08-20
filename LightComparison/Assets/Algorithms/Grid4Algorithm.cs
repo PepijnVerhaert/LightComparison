@@ -98,19 +98,19 @@ public class Grid4Algorithm : LightAlgorithm
                     continue;
                 }
 
-                color = Color.white * .7f * _grid[i][j];
+                //color = Color.white * .7f * _grid[i][j];
 
-                //color = _grid[i][j] >= _hardShadow ? Color.white * .7f : Color.black;
+                color = _grid[i][j] >= _hardShadow ? Color.white * .7f : Color.black;
 
-                //if (rangeLimit != -1)
-                //{
-                //    float distance = Mathf.Abs(x - i) + Mathf.Abs(y - j);
-                //    if (distance > rangeLimit)
-                //    {
-                //        color = Color.black;
-                //    }
-                //    //color *= 1f - distance / rangeLimit;
-                //}
+                if (rangeLimit != -1)
+                {
+                    float distance = Mathf.Abs(x - i) + Mathf.Abs(y - j);
+                    if (distance > rangeLimit)
+                    {
+                        color = Color.black;
+                    }
+                    //color *= 1f - distance / rangeLimit;
+                }
 
 
                 _colorMap[i][j] = color;

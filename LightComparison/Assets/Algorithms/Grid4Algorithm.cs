@@ -117,6 +117,9 @@ public class Grid4Algorithm : LightAlgorithm
             }
         }
     }
+
+    //Algorithm from https://towardsdatascience.com/a-quick-and-clear-look-at-grid-based-visibility-bf63769fbc78
+
     public void VisibilityWithinCone(int oX, int oY, int uX, int uY, int vX, int vY, int rangeLimit)
     {
         float originX = oX;

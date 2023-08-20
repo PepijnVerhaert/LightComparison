@@ -106,6 +106,8 @@ public class MilazzoAlgorithm : LightAlgorithm
 
     }
 
+    //Algorithm from http://www.adammil.net/blog/v125_Roguelike_Vision_Algorithms.html
+
     /// <param name="blocksLight">A function that accepts the X and Y coordinates of a tile and determines whether the
     /// given tile blocks the passage of light. The function must be able to accept coordinates that are out of bounds.
     /// </param>
